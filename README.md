@@ -2,6 +2,7 @@
 
 Made a 2D RTS Game with Claude\Blender\cursor Ai, Still a work in-progress
 Browser-based prototype of an MMO-style grand strategy game combining **army command** (Conqueror's Blade–style ground battles), **custom fleets** and **multi-scale travel** (X4 Foundations–style systems → planets → continents), **factions**, and **soldier/ship customization**.
+<img width="600" height="600" alt="giphy" src="https://github.com/user-attachments/assets/d789eeb1-97b9-4a67-bba4-ec5d33e59204" />
 
 ## Quick start (browser)
 
