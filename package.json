@@ -1,0 +1,79 @@
+{
+  "name": "conquer-the-universe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Conquer the Universe — FPS + RTS + MMO grand strategy",
+  "main": "electron/main.cjs",
+  "author": "Conquer the Universe",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc",
+    "preview": "vite preview",
+    "electron:dev": "node electron/dev-runner.cjs",
+    "pack:win": "powershell -ExecutionPolicy Bypass -File scripts/pack-windows.ps1",
+    "pack:portable": "powershell -ExecutionPolicy Bypass -File scripts/pack-windows.ps1 -Target portable",
+    "pack:installer": "powershell -ExecutionPolicy Bypass -File scripts/pack-windows.ps1 -Target installer",
+    "assets:intro": "powershell -ExecutionPolicy Bypass -File scripts/copy-intro-assets.ps1",
+    "assets:portrait": "node scripts/make-portrait-transparent.mjs",
+    "build:intro": "node scripts/build-intro-video.mjs"
+  },
+  "dependencies": {
+    "three": "^0.177.0"
+  },
+  "devDependencies": {
+    "@imgly/background-removal-node": "^1.4.5",
+    "electron": "^35.0.3",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.8.8",
+    "vite": "^6.3.5"
+  },
+  "build": {
+    "appId": "com.conquertheuniverse.game",
+    "productName": "Conquer the Universe",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/main.cjs",
+      "package.json",
+      "public/assets/intro/**/*",
+      "public/assets/ref/**/*",
+      "public/assets/menu/**/*"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "dist/**/*"
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.png",
+      "artifactName": "ConquerTheUniverse-${version}-${os}-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "ConquerTheUniverse-${version}-Portable.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "ConquerTheUniverse-${version}-Setup.${ext}"
+    }
+  }
+}
