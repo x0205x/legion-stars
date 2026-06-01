@@ -1,5 +1,6 @@
 # Conquer the Universe
 
+Made a 2D RTS Game with Claude\Blender\cursor Ai, Still a work in-progress
 Browser-based prototype of an MMO-style grand strategy game combining **army command** (Conqueror's Blade–style ground battles), **custom fleets** and **multi-scale travel** (X4 Foundations–style systems → planets → continents), **factions**, and **soldier/ship customization**.
 
 ## Quick start (browser)
