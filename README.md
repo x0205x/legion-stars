@@ -21,7 +21,7 @@ Build **both** the portable executable and the installer.
 **Use Windows PowerShell** (Start menu → PowerShell), not only the Cursor terminal — Cursor can shadow `node` with its own helper and break `npm install`.
 
 ```powershell
-cd C:\Users\judah\legion-stars
+cd C:\Users\"yourMchaineName"\legion-stars
 npm run pack:win
 ```
 
